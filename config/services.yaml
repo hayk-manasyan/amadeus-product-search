@@ -25,3 +25,9 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Service\Amadeus\AmadeusAuthorization:
+        arguments:
+            $baseUrl: '%env(resolve:AMADEUS_BASE_URL)%'
+            $apiKey: '%env(resolve:AMADEUS_API_KEY)%'
+            $apiSecret: '%env(resolve:AMADEUS_SECRET)%'
